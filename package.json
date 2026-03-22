@@ -1,0 +1,21 @@
+{
+  "name": "eco-chromium-browser",
+  "version": "0.1.0",
+  "description": "Energetsko učinkovit namizni brskalnik zgrajen na Chromiumu (Electron)",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js"
+  },
+  "keywords": [
+    "electron",
+    "chromium",
+    "browser",
+    "energy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}

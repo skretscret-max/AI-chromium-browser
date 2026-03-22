@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Chromium Browser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <button id="backBtn">←</button>
+      <button id="forwardBtn">→</button>
+      <button id="reloadBtn">⟳</button>
+      <input id="urlInput" type="text" placeholder="Vnesi URL ali iskalni niz" />
+      <button id="goBtn">Pojdi</button>
+      <label class="energy-toggle">
+        <input id="ecoMode" type="checkbox" checked />
+        Eco način
+      </label>
+      <button id="passwordManagerBtn">Gesla</button>
+    </header>
+
+    <main>
+      <webview id="browserView" src="https://www.google.com" allowpopups></webview>
+    </main>
+
+    <aside id="passwordModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Upravljalnik gesel</h2>
+        <form id="passwordForm">
+          <input id="siteInput" placeholder="Domena (npr. example.com)" required />
+          <input id="userInput" placeholder="Uporabniško ime" required />
+          <input id="passInput" placeholder="Geslo" required />
+          <button type="submit">Shrani geslo</button>
+        </form>
+
+        <div class="actions">
+          <button id="importBtn">Uvozi gesla</button>
+          <button id="exportBtn">Izvozi gesla</button>
+          <button id="closeModalBtn">Zapri</button>
+        </div>
+
+        <ul id="passwordList"></ul>
+      </div>
+    </aside>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
